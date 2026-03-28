@@ -25,7 +25,7 @@ export default function DonateBanner() {
           about money, consider buying me a coffee.
         </p>
         <a
-          href="https://buymeacoffee.com/growthme"
+          href="https://buymeacoffee.com/growthme.org"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-medium transition-all duration-150 hover:opacity-90"
