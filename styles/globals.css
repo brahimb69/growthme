@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --accent: #4a7c59;
+  --accent-light: #7db88e;
+  --accent-muted: rgba(74, 124, 89, 0.12);
+  --bg: #fafaf8;
+  --card: #ffffff;
+  --text: #1a1a19;
+  --text-secondary: #5a5854;
+  --text-muted: #94928d;
+  --border: #e8e6e1;
+  --contributions: #d4c5a9;
+  --contributions-fill: rgba(212, 197, 169, 0.5);
+  --gains-fill: rgba(74, 124, 89, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #7db88e;
+    --accent-light: #a8d4b4;
+    --accent-muted: rgba(125, 184, 142, 0.12);
+    --bg: #111110;
+    --card: #1a1a19;
+    --text: #e8e6e1;
+    --text-secondary: #b0ada6;
+    --text-muted: #6b6965;
+    --border: #2a2a28;
+    --contributions: #5a5445;
+    --contributions-fill: rgba(90, 84, 69, 0.5);
+    --gains-fill: rgba(74, 124, 89, 0.4);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Number input - hide spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Custom Recharts tooltip */
+.recharts-tooltip-cursor {
+  stroke: var(--accent);
+  stroke-opacity: 0.3;
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent-muted);
+  color: var(--text);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: fadeIn 0.4s ease-out;
+}
